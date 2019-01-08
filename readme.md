@@ -1,3 +1,4 @@
+```
 //连接事件管理
  EventLoopGroup bossGroup = new NioEventLoopGroup();
  //业务事件管理
@@ -31,18 +32,18 @@
      workerGroup.shutdownGracefully();
      bossGroup.shutdownGracefully();
  }
- 
-ServerBootstrap
+```
+### ServerBootstrap
 ServerBootstrap 为 Netty 服务端的启动辅助类，它提供了一系列的方法用于设置服务端启动相关的参数。
 
-Channel
+### Channel
 Channel 为 Netty 网络操作抽象类，它定义了一组功能，其提供的 API 大大降低了直接使用 Socket 类的复杂性。当然它也不仅仅只是包括了网络 IO 操作的基本功能，还包括一些与 Netty 框架相关的功能，包括获取该 Channel 的 EventLoop 等等。
 
-EventLoopGroup
+### EventLoopGroup
 EventLoopGroup 为 Netty 的 Reactor 线程池，它实际上就是 EventLoop 的容器，而 EventLoop 为 Netty 的核心抽象类，它的主要职责是处理所有注册到本线程多路复用器 Selector 上的 Channel。
 
-ChannelHandler
+### ChannelHandler
 ChannelHandler 作为 Netty 的主要组件，它主要负责 I/O 事件或者 I/O 操作进行拦截和处理，它可以选择性地拦截和处理自己感觉兴趣的事件，也可以透传和终止事件的传递。
 
-ChannelPipeline
+### ChannelPipeline
 ChannelPipeline 是 ChannelHandler 链的容器，它负责 ChannelHandler 的管理和事件拦截与调度。每当新建一个 Channel 都会分配一个新的 ChannelPepeline，同时这种关联是永久性的。
